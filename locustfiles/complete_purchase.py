@@ -10,13 +10,13 @@ resource.setrlimit(resource.RLIMIT_NOFILE, (8192, 8192))
 
 reservation_body = """{
     "tickets": [
-        {"ticket_type_id": 2517979274, "event_id": 1615163368},
-        {"ticket_type_id": 2527617852, "event_id": 1615163368}
+        {"ticket_type_id": 4112466915, "event_id": 1277973654},
+        {"ticket_type_id": 4112466915, "event_id": 1277973654}
     ]
 }"""
 
 checkout_body = """{
-    "email": "lindset@gmail.com",
+    "email": "havard+test@hoopla.no",
     "first_name": "Haavard",
     "last_name": "Lindset",
     "data": {
@@ -24,7 +24,7 @@ checkout_body = """{
         "wants_email": false
     },
     "return_url": "http://localhost:8765",
-    "checkout_method": "free"
+    "checkout_method": "creditcard"
 }"""
 
 class ReservationTaskSet(TaskSet):
@@ -68,7 +68,3 @@ class ReservationLocust(HttpLocust):
     task_set = ReservationTaskSet
     min_wait = 0
     max_wait = 0
-
-"""
-{ "reservations": [ { "ticket_type_id": 3024369127, "event_id": 213284806, "specs": [{}, {}] } ] }
-"""
