@@ -11,3 +11,5 @@ RUN           apt-get clean
 RUN           git clone https://github.com/locustio/locust.git /opt/locust
 RUN           cd /opt/locust; python setup.py install
 RUN           pip install pyzmq
+
+ADD locustfiles /opt/locustfiles
