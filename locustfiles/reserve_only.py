@@ -25,16 +25,6 @@ class ReservationTaskSet(TaskSet):
         reservation_response = session.post('/api/v0.9/reservation/', data=reservation_body)
 
 
-class DebugTaskSet(TaskSet):
-    base_url = 'http://localhost:8080'
-
-    @task
-    def call_debug(self):
-        print dir(self)
-        print dir(self.client)
-        self.client.get("/api/v0.1/_debug")
-
-
 class ReservationLocust(HttpLocust):
     host = ''
     task_set = ReservationTaskSet

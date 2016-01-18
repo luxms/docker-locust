@@ -53,18 +53,8 @@ class ReservationTaskSet(TaskSet):
         )))
 
 
-class DebugTaskSet(TaskSet):
-    base_url = 'http://localhost:8080'
-
-    @task
-    def call_debug(self):
-        print dir(self)
-        print dir(self.client)
-        self.client.get("/api/v0.1/_debug")
-
-
 class ReservationLocust(HttpLocust):
-    host = ''
+    host = os.environ['host']
     task_set = ReservationTaskSet
     min_wait = 0
     max_wait = 0
