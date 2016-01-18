@@ -16,7 +16,7 @@ class DebugTaskSet(TaskSet):
     def call_debug(self):
         print dir(self)
         print dir(self.client)
-        self.client.get("/api/v0.1/_debug")
+        self.client.get("/api/v0.1/_healthcheck")
 
 
 class ReservationLocust(HttpLocust):
