@@ -10,7 +10,7 @@ body = """{
 }"""
 
 class UserTasks(TaskSet):
-  base_url = "https://78ez960pbk.execute-api.us-west-2.amazonaws.com"
+  base_url = "https://85fopamqpf.execute-api.eu-west-1.amazonaws.com"
 
   @task
   def post(self):
