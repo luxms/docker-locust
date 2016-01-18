@@ -10,6 +10,8 @@ RUN           apt-get install -y build-essential git python2.7 python-pip python
 RUN           apt-get clean
 RUN           git clone https://github.com/locustio/locust.git /opt/locust
 RUN           cd /opt/locust; python setup.py install
-RUN           pip install pyzmq
+RUN sudo apt-get install -y libffi-dev
+RUN           pip install pyzmq service_identity pyOpenSSL ndg-httpsclient pyasn1
+
 
 ADD locustfiles /opt/locustfiles
