@@ -5,7 +5,7 @@ import json
 
 from locust import HttpLocust, TaskSet, task
 from locust.clients import HttpSession
-from locust.exceptions import StopLocust
+from locust.exception import StopLocust
 
 resource.setrlimit(resource.RLIMIT_NOFILE, (8192, 8192))
 
